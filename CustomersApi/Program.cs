@@ -1,3 +1,5 @@
+using CustomersApi.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,6 +11,8 @@ builder.Services.AddSwaggerGen();
 
 //Hacer esto siempre
 builder.Services.AddRouting(routing => routing.LowercaseUrls = true);
+
+builder.Services.AddDbContext<CustomerDatabaseContext>();
 
 var app = builder.Build();
 
